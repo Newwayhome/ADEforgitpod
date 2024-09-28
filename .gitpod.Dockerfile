@@ -1,5 +1,12 @@
 FROM gitpod/workspace-full
 
+# Install OpenJDK 11 (or the version of Java you prefer)
+RUN apt-get update && apt-get install -y openjdk-11-jdk
+
+# Set JAVA_HOME environment variable
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV PATH=$JAVA_HOME/bin:$PATH
+
 # Install Android SDK and Command Line Tools
 ENV ANDROID_HOME=/home/gitpod/android-sdk
 RUN mkdir -p $ANDROID_HOME/cmdline-tools \
