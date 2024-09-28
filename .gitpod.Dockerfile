@@ -1,7 +1,7 @@
 FROM gitpod/workspace-full
 
 # Install Android SDK and Command Line Tools
-ENV ANDROID_HOME=/opt/android-sdk
+ENV ANDROID_HOME=/home/gitpod/android-sdk
 RUN mkdir -p $ANDROID_HOME/cmdline-tools \
     && wget https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip -O cmdline-tools.zip \
     && unzip cmdline-tools.zip -d $ANDROID_HOME/cmdline-tools \
