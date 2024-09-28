@@ -1,8 +1,10 @@
 image:
-  file: .gitpod.Dockerfile
+  file: .gitpod.Dockerfile  # This references the Dockerfile for the Android SDK setup
+
 tasks:
-  - init: ./gradlew build
-    command: ./gradlew assembleDebug
+  - init: ./gradlew build    # This runs Gradle to build the project on workspace initialization
+    command: ./gradlew assembleDebug  # After building, it assembles a debug APK
+  
 ports:
-  - port: 8080
-    onOpen: open-preview
+  - port: 8080                # Opens a preview port for the application (e.g., if you run a web app)
+    onOpen: open-preview       # Automatically opens the preview when the port is opened
